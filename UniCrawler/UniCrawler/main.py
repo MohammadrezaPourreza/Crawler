@@ -1,3 +1,3 @@
 from scrapy import cmdline
 
-cmdline.execute("scrapy crawl professors".split())
+cmdline.execute("scrapy crawl courses".split())
