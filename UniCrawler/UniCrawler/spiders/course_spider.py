@@ -21,6 +21,6 @@ class ProfSpider(scrapy.Spider):
             yield scrapy.Request(url, callback=self.parse_each_course)
 
     def parse_each_course(self,response):
-        course_title = Selector(response=response).xpath('//fiche/').get()
+        course_title = Selector(response=response).xpath('//fiche/texte[@var="ITEMPLAN_XMATIERE_EN"]/text()').get()
         # course_title = response.css('h2.noSpacing').get()
         print(course_title)
